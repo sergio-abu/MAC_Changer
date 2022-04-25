@@ -73,17 +73,17 @@ def current_mac_getter(interface):
 
 
 # GET USER INPUT
-options = get_args()
+opt = get_args()
 
 # SHOW CURRENT MAC ADDRESS
-current_mac = current_mac_getter(options.interface)
+current_mac = current_mac_getter(opt.interface)
 print(f"[+] MAC is: {current_mac}")
 
 # CHANGE MAC ADDRESS
-change_mac(options.interface, options.new_mac)
-current_mac = current_mac_getter(options.interface)
+change_mac(opt.interface, opt.new_mac)
+current_mac = current_mac_getter(opt.interface)
 
-if current_mac == options.new_mac:
+if current_mac == opt.new_mac:
     print(f"[+] MAC IS NOW: {current_mac}")
 else:
     print(f"[-] CHANGE FAILED, MAC STILL IS: {current_mac}")
